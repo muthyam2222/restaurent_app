@@ -1,0 +1,65 @@
+###get
+GET http://localhost:3000/menu-api/items
+
+###post
+POST http://localhost:3000/menu-api/item
+Content-Type: application/json
+
+{
+    "name":"Biriyani",
+    "price":120,
+    "description":"Egg biriyani with eggs",
+    "category":"Biriyani",
+    "imageUrl":"egg.jpg",
+    "isAvailable":true
+}
+
+###update
+PUT http://localhost:3000/menu-api/item/Biriyani
+Content-Type: application/json
+
+{
+    "name":"Biriyani",
+    "price":130,
+    "description":"Egg biriyani with eggs",
+    "category":"Biriyani",
+    "imageUrl":"egg.jpg",
+    "isAvailable":true
+}
+
+###softDelete
+PUT http://localhost:3000/menu-api/items/Biriyani
+Content-Type: application/json
+
+{
+    "isAvailable":false
+}
+
+
+###postOrder
+POST http://localhost:3000/order-api/order
+Content-Type: application/json
+
+{
+    "userId":"123",
+    "orderId":"1235",
+    "items":[
+        {
+            "name":"Biriyani",
+            "quantity":2
+        }
+    ],
+    "price":240,
+    "status":"pending"
+}
+
+###fetch orders
+GET http://localhost:3000/order-api/orders/123
+
+###update order status
+PUT http://localhost:3000/order-api/order/1234
+Content-Type: application/json
+
+{
+    "status":"delivered"
+}
