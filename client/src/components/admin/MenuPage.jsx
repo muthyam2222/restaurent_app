@@ -31,7 +31,7 @@ function MenuPage() {
 
     async function handleSave(){
       try{
-        await axios.put(`http://localhost:3000/menu-api/item/${editItem.name}`,formData,{
+        await axios.put(`https://restaurent-app-seven.vercel.app/menu-api/item/${editItem.name}`,formData,{
           headers:{role:"admin"}
         })
         document.getElementById('closeModalBtn').click(); 
@@ -46,7 +46,7 @@ function MenuPage() {
     async function handleDelete(item){
       try{
         
-        await axios.put(`http://localhost:3000/menu-api/items/${item.name}`,{isAvailable:false},{
+        await axios.put(`https://restaurent-app-seven.vercel.app/menu-api/items/${item.name}`,{isAvailable:false},{
           headers:{role:"admin"}
         })
         getItems();
@@ -58,7 +58,7 @@ function MenuPage() {
     async function handleRestore(item){
       try{
         // item.isAvailable=true
-        await axios.put(`http://localhost:3000/menu-api/items/${item.name}`,{isAvailable:true},{
+        await axios.put(`https://restaurent-app-seven.vercel.app/menu-api/items/${item.name}`,{isAvailable:true},{
           headers:{role:"admin"}
         })
         getItems();
@@ -69,7 +69,7 @@ function MenuPage() {
 
     async function getItems(){
         try{
-            let res=await axios.get("http://localhost:3000/menu-api/items")
+            let res=await axios.get("https://restaurent-app-seven.vercel.app/menu-api/items")
             if(res.data.message==="Menu items fetched successfully"){
               setItems(res.data.payload);
             }

@@ -8,7 +8,7 @@ function OrderPage() {
 
   async function getOrders(){
     try{
-      const res=await axios.get(`http://localhost:3000/order-api/orders/${user.id}`)
+      const res=await axios.get(`https://restaurent-app-seven.vercel.app/order-api/orders/${user.id}`)
       if(res.data.message==='Orders fetched successfully'){
         setOrders(res.data.payload)
       }

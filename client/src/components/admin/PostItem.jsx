@@ -14,7 +14,7 @@ function PostItem() {
     try{
       itemobj.isAvailable=true;
       console.log("Sending to backend:", itemobj);
-      let res=await axios.post('http://localhost:3000/menu-api/item',itemobj,{
+      let res=await axios.post('https://restaurent-app-seven.vercel.app/menu-api/item',itemobj,{
         headers:{role:"admin"}
       });
       if(res.status===201 || res.status===200){

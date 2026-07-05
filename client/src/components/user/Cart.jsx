@@ -34,7 +34,7 @@ function Cart() {
         status: "pending"
       };
 
-      await axios.post("http://localhost:3000/order-api/order", orderPayload);
+      await axios.post("https://restaurent-app-seven.vercel.app/order-api/order", orderPayload);
 
       alert("✅ Payment successful and order placed!");
       setShowModal(false);

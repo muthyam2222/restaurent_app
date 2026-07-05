@@ -18,7 +18,7 @@ function Home() {
   const navigate=useNavigate();
   const email=user?.emailAddresses[0].emailAddress;
   async function getItems(){
-    let res=await axios.get('http://localhost:3000/menu-api/items')
+    let res=await axios.get('https://restaurent-app-seven.vercel.app/menu-api/items')
     if(res.data.message==="Menu items fetched successfully"){
       const isAdmin = user && user.publicMetadata.role === "admin";
       const filteredItems = isAdmin
