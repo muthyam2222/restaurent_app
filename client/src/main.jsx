@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import {RouterProvider,createBrowserRouter}  from 'react-router-dom';
 import RootLayout from './components/RootLayout.jsx';
 import Home from './components/common/Home.jsx';
-import Signin from './components/common/SignIn.jsx';
+import Signin from './components/common/Signin.jsx';
 import Signup from './components/common/Signup.jsx';
 import PostItem from './components/admin/PostItem.jsx'
 import AdminProfile from './components/admin/AdminProfile.jsx'
